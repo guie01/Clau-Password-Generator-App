@@ -45,23 +45,4 @@ function passwordCriteria() {
     }
 
 }
-// -- Criteria check
-
-function criteriaCheck() {
-  if(specialCharOpt === true){
-  (passwordResult.push(specialChar))
-  };
-  if(upperCaseOpt === true){
-    (passwordResult.push(upperCaseOpt))
-  };
-  if(lowerCaseOpt === true){
-    (passwordResult.push(lowerCaseOpt))
-  };
-  if(numberOpt === true){
-    (passwordResult.push(numberOpt))
-  };
-}
-
-var passwordResult = [];
-
 
