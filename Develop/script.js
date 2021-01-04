@@ -26,9 +26,18 @@ var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "
 //-- Promtps and confirms 
 
 function passwordCriteria() {
-  prompt("How many characters do you want your new password to contain?");
-  confirm("Do you want to include special characters?")
-  confirm("Do you want to include upper case letters?")
-  confirm("Do you want to include lower case letters?")
-  confirm("Do you want to include numbers?")
+  var passwordLenght = prompt("How many characters do you want your new password to contain?");
+    if(passwordLenght < 8){
+      alert("Password lenght should be more than 8 characters");
+      passwordCriteria();
+    } else if (passwordLenght > 128){
+      alert("Password lenght should be less than 128 chracters");
+      passwordCriteria();
+    }else{
+      confirm("Do you want to include special characters?")
+      confirm("Do you want to include upper case letters?")
+      confirm("Do you want to include lower case letters?")
+      confirm("Do you want to include numbers?")
+    }
+
 }
