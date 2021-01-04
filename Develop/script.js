@@ -34,10 +34,15 @@ function passwordCriteria() {
       alert("Password lenght should be less than 128 chracters");
       passwordCriteria();
     }else{
-      confirm("Do you want to include special characters?")
-      confirm("Do you want to include upper case letters?")
-      confirm("Do you want to include lower case letters?")
-      confirm("Do you want to include numbers?")
+      var specialCharOpt = confirm("Do you want to include special characters?");
+      var upperCaseOpt = confirm("Do you want to include upper case letters?");
+      var lowerCaseOpt = confirm("Do you want to include lower case letters?");
+      var numberOpt = confirm("Do you want to include numbers?");
+      if(!specialCharOpt && !upperCaseOpt && !lowerCaseOpt && !numberOpt){
+        alert("You must select at least one characters option");
+        passwordCriteria();
+      }
     }
 
 }
+
