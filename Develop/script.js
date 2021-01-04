@@ -26,7 +26,7 @@ var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", "-", ".", "
 //-- Promtps and confirms 
 
 function passwordCriteria() {
-  var passwordLenght = prompt("How many characters do you want your new password to contain?");
+  var passwordLenght = parseInt(prompt("How many characters do you want your new password to contain?"));
     if(passwordLenght < 8){
       alert("Password lenght should be more than 8 characters");
       passwordCriteria();
@@ -45,4 +45,23 @@ function passwordCriteria() {
     }
 
 }
+// -- Criteria check
+
+function criteriaCheck() {
+  if(specialCharOpt === true){
+  (passwordResult.push(specialChar))
+  };
+  if(upperCaseOpt === true){
+    (passwordResult.push(upperCaseOpt))
+  };
+  if(lowerCaseOpt === true){
+    (passwordResult.push(lowerCaseOpt))
+  };
+  if(numberOpt === true){
+    (passwordResult.push(numberOpt))
+  };
+}
+
+var passwordResult = [];
+
 
