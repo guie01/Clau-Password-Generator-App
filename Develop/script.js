@@ -66,3 +66,4 @@ function generatePassword(arr, number) {
 	return newPassword.join('');
 }
 
+//--- the logic seems to work but after repeated attempts it seems to break----
