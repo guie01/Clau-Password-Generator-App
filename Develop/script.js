@@ -2,19 +2,11 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-generateBtn.addEventListener("click", passwordCriteria);
 
-//--------- Start -------------------
+//--------- Logic -------------------
 
 //-- Password Characters
 
@@ -26,7 +18,7 @@ var randomPassword = []
 
 //-- Promtps and confirms 
 
-function passwordCriteria() {
+function writePassword() {
   var passwordLenght = parseInt(prompt("How many characters do you want your new password to contain?"));
     if(passwordLenght < 8){
       alert("Password lenght should be more than 8 characters");
@@ -56,6 +48,21 @@ function passwordCriteria() {
     if(numberOpt){
       randomPassword.push(numerical)
     }
+    var password = generatePassword(randomPassword, passwordLenght);
+    var passwordText = document.querySelector("#password");
+  
+    passwordText.value = password;
+  
 }
 
 //-- Random Password 
+function generatePassword(arr, number) {
+	let newArray = arr.flat();
+	let newPassword = [];
+	for (let i = 0; i < number; i++) {
+		let randomIndex = Math.floor(Math.random() * newArray.length - 1) + 1;
+		newPassword.push(newArray[randomIndex]);
+	}
+	return newPassword.join('');
+}
+
