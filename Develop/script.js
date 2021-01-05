@@ -36,17 +36,17 @@ function writePassword() {
         writePassword();
       }
     }
-    if(specialCharOpt){
+    if(specialCharOpt === true){
       randomPassword.push(specialChar);
     }
-    if(upperCaseOpt){
+    if(upperCaseOpt === true){
       randomPassword.push(lettersUpper);
     }
-    if(lowerCaseOpt){
-      randomPassword.push(lettersLower)
+    if(lowerCaseOpt === true){
+      randomPassword.push(lettersLower);
     }
-    if(numberOpt){
-      randomPassword.push(numerical)
+    if(numberOpt === true){
+      randomPassword.push(numerical);
     }
     var password = generatePassword(randomPassword, passwordLenght);
     var passwordText = document.querySelector("#password");
