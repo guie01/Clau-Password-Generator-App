@@ -22,10 +22,10 @@ function writePassword() {
   var passwordLenght = parseInt(prompt("How many characters do you want your new password to contain?"));
     if(passwordLenght < 8){
       alert("Password lenght should be more than 8 characters");
-      passwordCriteria();
+      writePassword();
     } else if (passwordLenght > 128){
       alert("Password lenght should be less than 128 chracters");
-      passwordCriteria();
+      writePassword();
     }else{
       var specialCharOpt = confirm("Do you want to include special characters?");
       var upperCaseOpt = confirm("Do you want to include upper case letters?");
@@ -33,7 +33,7 @@ function writePassword() {
       var numberOpt = confirm("Do you want to include numbers?");
       if(!specialCharOpt && !upperCaseOpt && !lowerCaseOpt && !numberOpt){
         alert("You must select at least one characters option");
-        passwordCriteria();
+        writePassword();
       }
     }
     if(specialCharOpt){
